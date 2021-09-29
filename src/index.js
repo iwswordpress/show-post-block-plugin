@@ -30,7 +30,7 @@ wp.blocks.registerBlockType('ourplugin/are-you-paying-attention', {
 				/>
 				<input type='text' placeholder='postid' value={props.attributes.postId} onChange={updatePostId} />
 				{/* Web Component */}
-				<show-post postid={props.attributes.postId ? props.attributes.postId : '188'}></show-post>
+				<show-post-block postid={props.attributes.postId ? props.attributes.postId : '34'}></show-post-block>
 			</div>
 		);
 	},

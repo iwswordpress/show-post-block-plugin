@@ -22,7 +22,7 @@ class AreYouPayingAttention {
       'render_callback' => array($this, 'theHTML')
     ));
     // Path to Web Component
-    $script_js     = 'src/show-post.js';
+    $script_js     = 'src/show-post-block.js';
     // Register
     wp_register_script('webcomponent',plugins_url( $script_js, __FILE__ ),'1.0');
     // Enqueue - available here in PHP and in index.js
@@ -31,10 +31,10 @@ class AreYouPayingAttention {
 
   function theHTML($attributes) {
     ob_start(); ?>
-    <h3>Today the sky is <?php echo esc_html($attributes['skyColor']) ?> and the grass is <?php echo esc_html($attributes['grassColor']) ?>!</h3>
+    <p class="text-2xl mt-2"><?php echo esc_html($attributes['skyColor']) ?> - <?php echo esc_html($attributes['grassColor']) ?> - ID: <?php echo esc_html($attributes['postId']) ?></p>
     <h2 class="text-2xl text-red-500">The Web Component</h2>
     <!-- Web Component -->
-    <show-post postid="<?php echo esc_html($attributes['postId']);?>"></show-post>
+    <show-post-block postid="<?php echo esc_html($attributes['postId']);?>"></show-post-block>
     <?php return ob_get_clean();
   }
 }
