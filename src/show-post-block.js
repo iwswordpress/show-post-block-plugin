@@ -50,7 +50,7 @@ class ShowPostBlock extends HTMLElement {
 	_getPosts(postID) {
 		console.log(`%cPOSTID = ${postID}`, 'color:purple;font-size:20px');
 
-		let url = 'http://localhost/wordpress/wp-json/wp/v2/posts/' + postID;
+		let url = 'https://wpjs.co.uk/wpb/wp-json/wp/v2/posts/' + postID;
 
 		console.log(`%cURL: ${url}`, 'color:green;font-size:18px');
 		fetch(url)
